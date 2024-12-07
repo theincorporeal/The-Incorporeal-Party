@@ -1,60 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Incorporeal Party</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to the official website of the Incorporeal Party. Explore our mission, manifesto, and upcoming events.">
+    <title>Incorporeal Party</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <header>
-    <div class="logo">Incorporeal Party</div>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#manifesto">Manifesto</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Incorporeal Party</h1>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#manifesto">Manifesto</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <section id="home">
-    <h1>Welcome to the Incorporeal Party</h1>
-    <p>Join us in transcending boundaries and enhancing life.</p>
-  </section>
+    <!-- Hero Section -->
+    <section id="home" class="home section">
+        <div class="container">
+            <h2>Welcome to the Incorporeal Future</h2>
+            <p>The Incorporeal Party is dedicated to enhancing life through a transcendent vision of existence. Join us in reshaping reality.</p>
+            <a href="#manifesto" class="btn">Discover Our Mission</a>
+        </div>
+    </section>
 
-  <section id="manifesto">
-    <h2>Manifesto</h2>
-    <p>Our principle: "Enhance life, do not preserve life." Explore incorporealism and its vision for humanity.</p>
-  </section>
+    <!-- Manifesto Section -->
+    <section id="manifesto" class="manifesto section">
+        <div class="container">
+            <h2>Our Manifesto</h2>
+            <p>We believe in enhancing life, not preserving it. Explore our guiding principles for a better future.</p>
+            <ul class="manifesto-list">
+                <li>🌌 Embrace Change and Growth</li>
+                <li>⚡ Drive Technological Innovation</li>
+                <li>💫 Transcend Material Limitations</li>
+                <li>🌿 Promote Sustainability and Balance</li>
+            </ul>
+        </div>
+    </section>
 
-  <section id="blog">
-    <h2>Blog</h2>
-    <div id="posts">
-      <p>Stay tuned for the latest posts on incorporealism.</p>
-    </div>
-  </section>
+    <!-- Blog Section -->
+    <section id="blog" class="blog section">
+        <div class="container">
+            <h2>Incorporeal Insights</h2>
+            <div class="blog-posts">
+                <article class="blog-post">
+                    <h3>The Future of Being</h3>
+                    <p>Exploring the philosophical foundations of incorporeal existence in a digital world.</p>
+                    <a href="#">Read More →</a>
+                </article>
+                <article class="blog-post">
+                    <h3>Technological Utopia</h3>
+                    <p>How advanced technology can help humanity transcend its current limitations.</p>
+                    <a href="#">Read More →</a>
+                </article>
+            </div>
+        </div>
+    </section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form id="contact-form">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
-      <button type="submit">Submit</button>
-    </form>
-  </section>
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Join the Incorporeal Movement. Connect with us and be part of the future.</p>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
 
-  <footer>
-    <p>© 2024 Incorporeal Party. All rights reserved.</p>
-    <div class="socials">
-      <a href="https://twitter.com">Twitter</a>
-      <a href="https://instagram.com">Instagram</a>
-    </div>
-  </footer>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Incorporeal Party. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#">Twitter</a> | 
+                <a href="#">Instagram</a> | 
+                <a href="#">YouTube</a>
+            </div>
+        </div>
+    </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
