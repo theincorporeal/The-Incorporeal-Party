@@ -1,77 +1,59 @@
-// Smooth Scroll for Navigation Links
-document.querySelectorAll('.nav-list a').forEach(link => {
-    link.addEventListener('click', (e) => {
+// Loader Effect
+window.addEventListener("load", () => {
+    document.getElementById("loader").classList.add("hidden");
+});
+
+// Personalized Greeting
+function setGreeting() {
+    const greetingEl = document.getElementById("greeting");
+    const hour = new Date().getHours();
+    let greeting = "Welcome to the Future!";
+    if (hour < 12) greeting = "Good Morning, Future Traveler!";
+    else if (hour < 18) greeting = "Good Afternoon, Visionary!";
+    else greeting = "Good Evening, Dreamer!";
+    
+    greetingEl.textContent = greeting;
+    greetingEl.classList.remove("hidden");
+}
+
+setGreeting();
+
+// Smooth Navigation
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", e => {
         e.preventDefault();
-        const target = document.querySelector(e.target.getAttribute('href'));
-        target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
+        const target = document.querySelector(link.getAttribute("href"));
+        target.scrollIntoView({ behavior: "smooth" });
     });
 });
 
-// Back-to-Top Button
-const backToTopBtn = document.createElement('button');
-backToTopBtn.textContent = '⬆ Top';
-backToTopBtn.className = 'back-to-top';
-document.body.appendChild(backToTopBtn);
+// Chat Integration
+const chatToggle = document.getElementById("chat-toggle");
+const chatWindow = document.getElementById("chat-window");
+const chatMessages = document.getElementById("chat-messages");
+const chatInput = document.getElementById("chat-input");
+const chatSend = document.getElementById("chat-send");
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTopBtn.style.display = 'block';
-    } else {
-        backToTopBtn.style.display = 'none';
-    }
+chatToggle.addEventListener("click", () => {
+    chatWindow.classList.toggle("hidden");
 });
 
-backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+// Simulated Chatbot
+chatSend.addEventListener("click", () => {
+    const userMessage = chatInput.value.trim();
+    if (!userMessage) return;
+
+    // Append user message
+    const userMessageEl = document.createElement("p");
+    userMessageEl.textContent = `You: ${userMessage}`;
+    chatMessages.appendChild(userMessageEl);
+    
+    // Simulate AI Response
+    setTimeout(() => {
+        const aiMessageEl = document.createElement("p");
+        aiMessageEl.textContent = "AI Guide: This is only the beginning. Explore further.";
+        chatMessages.appendChild(aiMessageEl);
+    }, 1000);
+
+    chatInput.value = "";
 });
-
-// Contact Form Validation
-const contactForm = document.querySelector('form');
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-
-    if (validateForm(name, email, message)) {
-        alert('Thank you for contacting us! We will be in touch soon.');
-        contactForm.reset();
-    }
-});
-
-// Form Validation Function
-function validateForm(name, email, message) {
-    if (name === '' || email === '' || message === '') {
-        alert('All fields are required.');
-        return false;
-    }
-    if (!isValidEmail(email)) {
-        alert('Please enter a valid email address.');
-        return false;
-    }
-    return true;
-}
-
-// Email Validation Function
-function isValidEmail(email) {
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailPattern.test(email);
-}
-
-// Dynamic Theme Toggle (Optional Enhancement)
-const themeToggle = document.createElement('button');
-themeToggle.textContent = 'Toggle Theme';
-themeToggle.className = 'theme-toggle';
-document.body.appendChild(themeToggle);
-
-themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-theme');
-});
-
